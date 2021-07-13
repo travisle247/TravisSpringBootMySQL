@@ -30,3 +30,9 @@ stages:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'dockerconnection'
+        repository: 'springbootmysql'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
