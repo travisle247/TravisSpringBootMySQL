@@ -32,7 +32,7 @@ stages:
         sonarQubeRunAnalysis: false
     - task: Docker@2
       inputs:
-        containerRegistry: 'dockerconnection'
+        containerRegistry: 'azuredockerconnection'
         repository: 'springbootmysql'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
