@@ -36,3 +36,12 @@ stages:
         repository: 'springbootmysql'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Visual Studio Enterprise(aa2d8073-cf46-4f53-abef-78339f602b9c)'
+        appType: 'webAppContainer'
+        WebAppName: 'travisspringbootmysql'
+        DockerNamespace: 'travisdevopscontainers.azurecr.io'
+        DockerRepository: '$(Build.Repository.Name)'
+        DockerImageTag: '$(Build.BuildId)'
