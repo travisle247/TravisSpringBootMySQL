@@ -20,6 +20,15 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    - task: Maven@3
+      inputs:
+        mavenPomFile: 'pom.xml'
+        publishJUnitResults: false
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: true
     - task: Docker@2
       displayName: Build an image
       inputs:
