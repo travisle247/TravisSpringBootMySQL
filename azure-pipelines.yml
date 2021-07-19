@@ -32,14 +32,14 @@ stages:
         sonarQubeRunAnalysis: false
     - task: Docker@2
       inputs:
-        containerRegistry: 'azuredockerconnection'
-        repository: 'springbootmysql'
+        containerRegistry: 'dockerconnection'
+        repository: 'travisle247/springbootmysql'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
     - task: Docker@2
       inputs:
-        containerRegistry: 'dockerconnection'
-        repository: 'travisle247/springbootmysql'
+        containerRegistry: 'azuredockerconnection'
+        repository: 'springbootmysql'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
     - task: AzureRmWebAppDeployment@4
