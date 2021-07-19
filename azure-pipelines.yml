@@ -49,5 +49,5 @@ stages:
         appType: 'webAppContainer'
         WebAppName: 'travisspringbootmysql'
         DockerNamespace: 'travisdevopscontainers.azurecr.io'
-        DockerRepository: '$(Build.Repository.Name)'
+        DockerRepository: 'travisle247/springbootmysql'
         DockerImageTag: '$(Build.BuildId)'
